@@ -1,0 +1,4 @@
+__pycache__/
+data/crop_production.csv
+crops.db
+Make_sample.py
