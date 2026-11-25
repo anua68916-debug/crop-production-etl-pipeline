@@ -28,3 +28,7 @@ Download crop_production.csv and put it inside a folder named data.
 - load.py: saves it into the database
 - analyse.py: SQL queries and chart
 - main.py: runs the whole pipeline
+
+## Chart
+
+![Top 10 crops by production](chart.png)
