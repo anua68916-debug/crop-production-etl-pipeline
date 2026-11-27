@@ -1,7 +1,31 @@
+from pathlib import Path
 import pandas as pd
 
 def extract(path="data/crop_production.csv"):
-    df = pd.read_csv(path)
+    csv_path = Path(path)
+
+    if not csv_path.is_file():
+        raise FileNotFoundError(
+            f"Dataset not found at '{csv_path}'. "
+            "Put crop_production.csv in the data folder."
+        )
+
+    df = pd.read_csv(csv_path)
+
+    required_columns = {
+        "State_Name",
+        "District_Name",
+        "Season",
+        "Crop",
+        "Area",
+        "Production",
+    }
+    missing_columns = required_columns - set(df.columns)
+
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise ValueError(f"Dataset is missing required columns: {missing}")
+
     print("Extracted rows:", len(df))
     return df
 
