@@ -26,6 +26,12 @@ Download crop_production.csv and put it inside a folder named data.
 2. Download `crop_production.csv` and place it in the `data` folder.
 3. Run the pipeline: `python main.py`
 
+## Tests
+
+Run the tests with:
+
+`python -m unittest discover -s tests -v`
+
 ## Files
 - extract.py: reads the data
 - transform.py: cleans the data
